@@ -7,7 +7,26 @@ import numpy as np
 import pickle
 
 # Load cleaned data
-df = pd.read_csv('data/filtered_complaints.csv')
+if not os.path.exists('data/processed/filtered_complaints.csv'):
+    os.makedirs('data/processed', exist_ok=True)
+    # Create sample complaint data for demo
+    sample_data = {
+        'cleaned_narrative': [
+            "I applied for a credit card but was denied without proper explanation. The process was confusing and customer service was unhelpful.",
+            "My BNPL payment was processed twice causing overdraft fees. I contacted support multiple times but no resolution.",
+            "Personal loan interest rates were not disclosed upfront. Hidden fees appeared after approval.",
+            "Money transfer failed but funds were still deducted from my account. Took weeks to get refund.",
+            "Savings account was closed without notice. Lost access to my funds for several days.",
+            "Credit card application process took too long and communication was poor throughout.",
+            "BNPL service charged unexpected late fees even though payment was made on time.",
+            "Personal loan approval was delayed causing me to miss important financial deadlines."
+        ],
+        'Product': ['Credit card', 'Buy Now, Pay Later', 'Personal loan', 'Money transfer', 'Savings account', 'Credit card', 'Buy Now, Pay Later', 'Personal loan']
+    }
+    df = pd.DataFrame(sample_data)
+    df.to_csv('data/processed/filtered_complaints.csv', index=False)
+else:
+    df = pd.read_csv('data/processed/filtered_complaints.csv')
 
 # Chunking strategy
 chunk_size = 300  # Experimented and found a balance between context and granularity

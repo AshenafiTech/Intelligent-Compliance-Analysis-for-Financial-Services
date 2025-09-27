@@ -33,8 +33,8 @@ CrediTrust Financial receives thousands of customer complaints monthly across pr
 ## Getting Started
 1. **Clone the repository:**
    ```bash
-   git clone <repo-url>
-   cd intelligent-complaint-analysis
+   git clone https://github.com/AshenafiTech/Intelligent-Compliance-Analysis-for-Financial-Services.git
+   cd Intelligent-Compliance-Analysis-for-Financial-Services
    ```
 2. **Install dependencies:**
    ```bash
@@ -50,16 +50,16 @@ CrediTrust Financial receives thousands of customer complaints monthly across pr
    - Process and embed data as described in the notebooks
 
 ## Usage
-- Launch the chatbot UI or API (to be implemented)
+- To use the system, run the RAG pipeline notebooks in the `notebooks/` directory. For a chatbot or API interface, see future releases or extend using the code in `src/`.
 - Ask questions like:
   - "Why are people unhappy with BNPL?"
   - "What are the top issues for Credit Cards in June 2024?"
 - The system retrieves relevant complaints and generates concise, evidence-backed answers
 
 ## Contributing
-1. Fork the repo and create your branch (`git checkout -b feature/your-feature`)
+1. Fork the repo and create your branch (`git checkout -b feature/your-branch-name`)
 2. Commit your changes (`git commit -am 'Add new feature'`)
-3. Push to the branch (`git push origin feature/your-feature`)
+3. Push to the branch (`git push origin feature/your-branch-name`)
 4. Open a Pull Request
 
 ## License
